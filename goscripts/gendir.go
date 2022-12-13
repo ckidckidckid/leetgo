@@ -17,10 +17,15 @@ func main() {
 	}
 	rawString = text
 
-	helper(rawString)
+	dirName := generateName(rawString)
+	initializeDir(dirName)
 }
 
-func helper(s string) {
+func initializeDir(s string) {
+
+}
+
+func generateName(s string) string {
 	before, after, found := strings.Cut(s, ".")
 	if !found {
 		fmt.Errorf("separator '.' not found in the string")
@@ -36,4 +41,5 @@ func helper(s string) {
 	s = before + "__" + after
 
 	fmt.Println(s)
+	return s
 }
