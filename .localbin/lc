@@ -1,3 +1,8 @@
 #!/bin/sh
 
-/Users/ahallur/PersonalWorkspace/leetcode-cli/bin/leetcode_cli $@
+DIR="$( dirname -- "${BASH_SOURCE[0]}"; )"
+DIR="$( realpath -e -- "$DIR"; )";
+
+SCRIPT_NAME=$(basename "$0")
+
+go run "$DIR/../goscripts/$SCRIPT_NAME.go" $@
